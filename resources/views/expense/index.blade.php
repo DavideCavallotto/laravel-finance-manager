@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Queste sono le mie entrate</h1>
+        <h1>Queste sono le mie uscite</h1>        
 
         <table class="table text-center">
             <thead>
@@ -12,21 +12,24 @@
                     <th scope="col">Importo</th>
                     <th scope="col">Descrizione</th>
                     <th scope="col">Data</th>
+
+                    
                 </tr>
             </thead>
             <tbody>
-                @forelse ($incomes as $income)
-                    <tr>
-                        <td>{{$income->id}}</td>
-                        <td>{{$income->category}}</td>
-                        <td style="white-space: nowrap;">{{$income->amount}} &euro;</td>
-                        <td class="text-start">{{$income->description}}</td>
-                        <td>{{$income->created_at}}</td>
-                    </tr>
+                @forelse ($expenses as $expense)
+                    
+                <tr>
+                  <td>{{$expense->id}}</td>
+                  <td>{{$expense->category}}</td>
+                  <td style="white-space: nowrap;">{{$expense->amount}} &euro;</td>
+                  <td class="text-start">{{$expense->description}}</td>
+                  <td>{{$expense->created_at}}</td>
+                  
+                </tr>
+               
                 @empty
-                    <tr>
-                        <td colspan="5"><h2 class="text-center">Nessuna Entrata</h2></td>
-                    </tr>
+                    <h2>Nessun Uscita</h2>    
                 @endforelse
             </tbody>
         </table>
@@ -34,7 +37,8 @@
 
     <div class="d-flex justify-content-center">
         <div>
-            {{$incomes->links()}}
+            {{$expenses->links()}}
         </div>
     </div>
+    
 @endsection

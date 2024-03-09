@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('incomes', [IncomeController::class, 'index'])->name('incomes');
+Route::get('expenses', [ExpenseController::class, 'index'])->name('expenses');
 
 // Route::get('/', function () {
 //     return view('layouts.app');
