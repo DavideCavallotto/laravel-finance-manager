@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1>Le tue transazioni in uscita</h1>        
+        <h1>Le tue transazioni in uscita</h1>  
+        
+        <a class="btn btn-primary my-4" href="{{ route('expenses.create') }}">Aggiungi Transazione</a>  
         
         <table class="table text-center border border-2">
             <thead>

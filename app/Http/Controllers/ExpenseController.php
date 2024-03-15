@@ -13,9 +13,14 @@ class ExpenseController extends Controller
         return view('expense.index', compact('expenses'));
     }
 
-    public function show($id) {
+    public function show(Expense $expense) {
 
-        $expense = Expense::find($id);
+   
         return view('expense.show', compact('expense'));
+    }
+
+    public function create() {
+
+        return view('expense.create');
     }
 }

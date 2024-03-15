@@ -13,9 +13,13 @@ class IncomeController extends Controller
         return view('income.index', compact('incomes'));
     }
 
-    public function show($id) {
-
-        $income = Income::find($id);
+    public function show(Income $income) {
+        
         return view('income.show', compact('income'));
+    }
+
+    public function create() {
+
+        return view('income.create');
     }
 }
