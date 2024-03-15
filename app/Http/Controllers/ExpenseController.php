@@ -12,4 +12,10 @@ class ExpenseController extends Controller
         $expenses = Expense::paginate(20);
         return view('expense.index', compact('expenses'));
     }
+
+    public function show($id) {
+
+        $expense = Expense::find($id);
+        return view('expense.show', compact('expense'));
+    }
 }

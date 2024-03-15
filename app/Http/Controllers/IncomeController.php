@@ -12,4 +12,10 @@ class IncomeController extends Controller
         $incomes = Income::paginate(20);
         return view('income.index', compact('incomes'));
     }
+
+    public function show($id) {
+
+        $income = Income::find($id);
+        return view('income.show', compact('income'));
+    }
 }

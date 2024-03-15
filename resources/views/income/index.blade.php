@@ -2,39 +2,36 @@
 
 @section('content')
     <div class="container">
-        <h1>Queste sono le mie entrate</h1>
+        <h1>Le tue transazioni in entrata</h1>
 
-        <table class="table text-center">
+        <table class="table text-center border border-2">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
                     <th scope="col">Categoria</th>
                     <th scope="col">Importo</th>
-                    <th scope="col">Descrizione</th>
                     <th scope="col">Data</th>
+                    <th scope="col">Dettagli</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse ($incomes as $income)
-                    <tr>
-                        <td>{{$income->id}}</td>
+                    <tr class="align-middle">
                         <td>{{$income->category}}</td>
                         <td style="white-space: nowrap;">{{$income->amount}} &euro;</td>
-                        <td class="text-start">{{$income->description}}</td>
-                        <td>{{$income->created_at}}</td>
+                        <td>{{ $income->created_at->format('d/m/Y') }}</td>
+                        <td><a href="{{route('incomes.show', $income)}}"><i class="fa-solid fa-circle-info text-success"></i></a></td>
                     </tr>
                 @empty
-                    <tr>
-                        <td colspan="5"><h2 class="text-center">Nessuna Entrata</h2></td>
-                    </tr>
+                    <h2 class="text-center">Nessuna Entrata</h2>                                   
                 @endforelse
             </tbody>
         </table>
-    </div>
 
-    <div class="d-flex justify-content-center">
-        <div>
-            {{$incomes->links()}}
+        <div class="d-flex justify-content-center">
+            <div>
+                {{$incomes->links()}}
+            </div>
         </div>
     </div>
+
 @endsection

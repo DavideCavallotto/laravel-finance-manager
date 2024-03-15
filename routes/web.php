@@ -20,6 +20,9 @@ Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('incomes', [IncomeController::class, 'index'])->name('incomes');
 Route::get('expenses', [ExpenseController::class, 'index'])->name('expenses');
 
+Route::get('/incomes/{income}', [IncomeController::class, 'show'])->name('incomes.show');
+Route::get('/expenses/{expense}', [expenseController::class, 'show'])->name('expenses.show');
+
 // Route::get('/', function () {
 //     return view('layouts.app');
 // });
