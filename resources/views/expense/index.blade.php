@@ -12,7 +12,9 @@
                     <th scope="col">Categoria</th>
                     <th scope="col">Importo</th>
                     <th scope="col">Data</th>
-                    <th scope="col">Dettagli</th>                    
+                    <th scope="col">Dettagli</th>   
+                    <th scope="col">Modifica</th>  
+                    <th scope="col">Elimina</th>                
                 </tr>
             </thead>
             <tbody>
@@ -22,7 +24,10 @@
                   <td>{{$expense->category}}</td>
                   <td style="white-space: nowrap;">{{$expense->amount}} &euro;</td>                  
                   <td>{{ $expense->created_at->format('d/m/Y') }}</td>
-                  <td><a href="{{route('expenses.show', $expense)}}"><i class="fa-solid fa-circle-info text-success"></i></a></td>                  
+                  <td class="col-1"><a href="{{route('expenses.show', $expense)}}"><i class="fa-solid fa-circle-info text-success"></i></a></td>    
+                  <td class="col-1"><a href="{{route('expenses.edit', $expense)}}"><i class="fa-solid fa-wrench"></i></a></td>
+                  <td class="col-1"><a href=""><i class="fa-solid fa-trash-can text-danger"></i></a></td>
+              
                 </tr>
                
                 @empty

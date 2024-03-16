@@ -13,6 +13,8 @@
                     <th scope="col">Importo</th>
                     <th scope="col">Data</th>
                     <th scope="col">Dettagli</th>
+                    <th scope="col">Modifica</th>
+                    <th scope="col">Elimina</th>   
                 </tr>
             </thead>
             <tbody>
@@ -21,7 +23,10 @@
                         <td>{{$income->category}}</td>
                         <td style="white-space: nowrap;">{{$income->amount}} &euro;</td>
                         <td>{{ $income->created_at->format('d/m/Y') }}</td>
-                        <td><a href="{{route('incomes.show', $income)}}"><i class="fa-solid fa-circle-info text-success"></i></a></td>
+                        <td class="col-1"><a href="{{route('incomes.show', $income)}}"><i class="fa-solid fa-circle-info text-success"></i></a></td>
+                        <td class="col-1"><a href="{{route('incomes.edit', $income)}}"><i class="fa-solid fa-wrench"></i></a></td>
+                        <td class="col-1"><a href=""><i class="fa-solid fa-trash-can text-danger"></i></a></td>
+
                     </tr>
                 @empty
                     <h2 class="text-center">Nessuna Entrata</h2>                                   

@@ -14,6 +14,7 @@ class ExpenseController extends Controller
         return view('expense.index', compact('expenses'));
     }
 
+    // Il $expense funziona perchè è uguale al parametro aggiunto nella rotta show
     public function show(Expense $expense) {
 
    
@@ -29,14 +30,33 @@ class ExpenseController extends Controller
 
         $data = $request->all();
 
-        $new_expense = new Expense();
-        $new_expense->category = $data['category'];
-        $new_expense->amount = $data['amount'];
-        $new_expense->description = $data['description'];
+        // Salviamo i dati del form nel db 
 
-        $new_expense->save();
+        // $new_expense = new Expense();
+        // $new_expense->category = $data['category'];
+        // $new_expense->amount = $data['amount'];
+        // $new_expense->description = $data['description'];
+        // $new_expense->save();
+
+        // Li possiamo salvare anche con il metodo sotto solo se nel form i campi 'name' 
+        // corrispondono ai nomi delle colonne. questo metodo porterà ad un'assegnazione
+        // di massa che restituirà un errore, per risolverlo andremo ad aggiungere il fillable 
+        // nel model corrispettivo con i campi che vogliamo salvare
+
+        $new_expense = Expense::create($data);
         
         return redirect()->route('expenses.show', $new_expense->id);
         
+    }
+
+    public function edit(Expense $expense) {
+        return view('expense.edit', compact('expense'));
+    }
+
+    public function update(Request $request, Expense $expense) {
+        $data = $request->all();
+        $expense->update($data);
+
+        return redirect()->route('expenses.show', $expense);
     }
 }
