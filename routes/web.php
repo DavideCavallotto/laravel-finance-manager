@@ -24,7 +24,8 @@ Route::get('/incomes/create', [IncomeController::class, 'create'])->name('income
 Route::get('/expenses/create', [ExpenseController::class, 'create'])->name('expenses.create');
 Route::get('/incomes/{income}', [IncomeController::class, 'show'])->name('incomes.show');
 Route::get('/expenses/{expense}', [expenseController::class, 'show'])->name('expenses.show');
-
+Route::post('incomes', [IncomeController::class, 'store'])->name('incomes.store');
+Route::post('expenses', [ExpenseController::class, 'store'])->name('expenses.store');
 
 // Route::get('/', function () {
 //     return view('layouts.app');

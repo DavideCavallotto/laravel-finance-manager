@@ -5,17 +5,17 @@
 
     <h3>Inserisci transazione in entrata</h3>
 
-    <form class="row" action="">
-       
+    <form class="row" action="{{route('incomes.store')}}" method="POST">
+       @csrf
         <div class="mb-3 col-6">
             <label for="category" class="form-label">Categoria</label>
             <select class="form-select" id="category" name="category" aria-label="Seleziona una categoria" required>
                 <option value="" disabled selected>Seleziona una categoria</option>
-                <option value="1">Stipendio</option>
-                <option value="2">Lavoro autonomo</option>
-                <option value="3">Pensione</option>
-                <option value="4">Vendite di beni</option>
-                <option value="5">Donazioni</option>
+                <option value="Stipendio">Stipendio</option>
+                <option value="Lavoro autonomo">Lavoro autonomo</option>
+                <option value="Pensione">Pensione</option>
+                <option value="Vendite di beni">Vendite di beni</option>
+                <option value="Donazioni">Donazioni</option>
             </select>
         </div>   
     

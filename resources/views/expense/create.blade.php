@@ -5,17 +5,17 @@
 
     <h3>Inserisci transazione in uscita</h3>
 
-    <form class="row" action="">
-       
+    <form class="row" action="{{route('expenses.store')}}" method="POST">
+       @csrf
         <div class="mb-3 col-6">
             <label for="category" class="form-label">Categoria</label>
             <select class="form-select" id="category" name="category" aria-label="Seleziona una categoria" required>
                 <option value="" disabled selected>Seleziona una categoria</option>
-                <option value="1">Abbonamenti</option>
-                <option value="2">Bollette</option>
-                <option value="3">Affitto</option>
-                <option value="4">Acquisto di beni</option>
-                <option value="5">Donazioni</option>
+                <option value="Abbonamenti">Abbonamenti</option>
+                <option value="Bollette">Bollette</option>
+                <option value="Affitto">Affitto</option>
+                <option value="Acquisto di beni">Acquisto di beni</option>
+                <option value="Donazioni">Donazioni</option>
             </select>
         </div>   
     
