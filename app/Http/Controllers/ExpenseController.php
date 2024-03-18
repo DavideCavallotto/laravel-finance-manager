@@ -59,4 +59,10 @@ class ExpenseController extends Controller
 
         return redirect()->route('expenses.show', $expense);
     }
+
+    public function destroy(Expense $expense) {
+        $expense->delete();
+
+        return redirect()->route('expenses.index');
+    }
 }

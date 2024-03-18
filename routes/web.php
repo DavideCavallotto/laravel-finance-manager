@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('home');
-Route::get('incomes', [IncomeController::class, 'index'])->name('incomes');
-Route::get('expenses', [ExpenseController::class, 'index'])->name('expenses');
+Route::get('/incomes', [IncomeController::class, 'index'])->name('incomes.index');
+Route::get('/expenses', [ExpenseController::class, 'index'])->name('expenses.index');
 
 Route::get('/incomes/create', [IncomeController::class, 'create'])->name('incomes.create');
 Route::get('/expenses/create', [ExpenseController::class, 'create'])->name('expenses.create');
@@ -32,6 +32,8 @@ Route::get('/incomes/{income}/edit', [IncomeController::class, 'edit'])->name('i
 Route::get('/expenses/{expense}/edit', [expenseController::class, 'edit'])->name('expenses.edit');
 Route::put('/incomes/{income}', [IncomeController::class, 'update'])->name('incomes.update');
 Route::put('/expenses/{expense}', [expenseController::class, 'update'])->name('expenses.update');
+Route::delete('/incomes/{income}', [IncomeController::class, 'destroy'])->name('incomes.destroy');
+Route::delete('/expenses/{expense}', [expenseController::class, 'destroy'])->name('expenses.destroy');
 
 
 

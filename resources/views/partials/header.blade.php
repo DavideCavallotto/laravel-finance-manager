@@ -2,8 +2,8 @@
     <h3 class="m-0">Finance Manager</h3>
     <ul class="d-flex gap-3 align-items-center m-0">
         <li><a class="nav-link" href="{{route('home')}}">Home</a></li>
-        <li><a class="nav-link" href="{{route('incomes')}}">Entrate</a></li>
-        <li><a class="nav-link" href="{{route('expenses')}}">Uscite</a></li>
+        <li><a class="nav-link" href="{{route('incomes.index')}}">Entrate</a></li>
+        <li><a class="nav-link" href="{{route('expenses.index')}}">Uscite</a></li>
         <li><a class="nav-link" href="">Sign in/Login</a></li>
     </ul>
 </div>

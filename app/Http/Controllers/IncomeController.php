@@ -55,4 +55,10 @@ class IncomeController extends Controller
 
         return redirect()->route('incomes.show', $income);
     }
+
+    public function destroy(Income $income) {
+        $income->delete();
+
+        return redirect()->route('incomes.index');
+    }
 }

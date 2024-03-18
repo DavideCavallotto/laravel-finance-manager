@@ -25,7 +25,13 @@
                         <td>{{ $income->created_at->format('d/m/Y') }}</td>
                         <td class="col-1"><a href="{{route('incomes.show', $income)}}"><i class="fa-solid fa-circle-info text-success"></i></a></td>
                         <td class="col-1"><a href="{{route('incomes.edit', $income)}}"><i class="fa-solid fa-wrench"></i></a></td>
-                        <td class="col-1"><a href=""><i class="fa-solid fa-trash-can text-danger"></i></a></td>
+                        <td class="col-1">
+                            <form action="{{ route('incomes.destroy', $income) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-link text-danger"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
+                        </td>
 
                     </tr>
                 @empty
