@@ -1,4 +1,4 @@
-<div class="main-header d-flex justify-content-between align-items-center shadow-sm p-3 bg-secondary bg-gradient text-white">
+<div class="main-header d-flex justify-content-between align-items-center shadow-sm p-3 bg-gradient text-black">
     <h3 class="m-0">Finance Manager</h3>
     <ul class="d-flex gap-3 align-items-center m-0">
         <li><a class="nav-link" href="{{route('home')}}">Home</a></li>

@@ -7,7 +7,7 @@
     @vite('resources/js/app.js')
     
 </head>
-<body>
+<body id="finance-manager">
     <div class="vh-100 d-flex flex-column justify-content-between">
         <header>
             @include('partials.header')
@@ -24,3 +24,11 @@
     </div>
 </body>
 </html>
+
+<style>
+    #finance-manager {
+        background-image: url('/image/manager.webp');
+        background-position: center;
+        background-size: cover;
+    }
+</style>
