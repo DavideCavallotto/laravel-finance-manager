@@ -4,6 +4,8 @@
         <li><a class="nav-link" href="{{route('home')}}">Home</a></li>
         <li><a class="nav-link" href="{{route('incomes.index')}}">Entrate</a></li>
         <li><a class="nav-link" href="{{route('expenses.index')}}">Uscite</a></li>
+        <li><a class="nav-link" href="{{route('difference')}}">Saldo Disponibile</a></li>
+
         <li><a class="nav-link" href="">Sign in/Login</a></li>
     </ul>
 </div>

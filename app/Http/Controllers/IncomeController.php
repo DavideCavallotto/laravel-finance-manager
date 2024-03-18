@@ -9,7 +9,7 @@ class IncomeController extends Controller
 {
     public function index() {
 
-        $incomes = Income::orderBy('created_at', 'desc')->paginate(20);
+        $incomes = Income::orderBy('created_at', 'desc')->paginate(10);
         return view('income.index', compact('incomes'));
     }
     // Il $income funziona perchè è uguale al parametro aggiunto nella rotta show
