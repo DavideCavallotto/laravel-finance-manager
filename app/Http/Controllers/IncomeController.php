@@ -25,6 +25,11 @@ class IncomeController extends Controller
 
     public function store(Request $request) {
 
+        $request->validate([
+            'category' => 'required|max:50|in:Stipendio,Lavoro autonomo,Pensione,Vendite di beni,Donazioni',
+            'amount' => 'required|numeric|between:0.01,9999999.99'
+        ]);
+
         $data = $request->all();
 
         // Salviamo i dati del form nel db 

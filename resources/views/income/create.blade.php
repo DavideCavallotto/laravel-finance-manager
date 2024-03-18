@@ -17,7 +17,7 @@
                 <option value="Vendite di beni">Vendite di beni</option>
                 <option value="Donazioni">Donazioni</option>
             </select>
-        </div>   
+        </div>           
     
         <div class="mb-3 col-6">
             <label for="amount" class="form-label">Importo</label>
@@ -35,6 +35,15 @@
         </div>
     
     </form>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 </div>
 
 @endsection
