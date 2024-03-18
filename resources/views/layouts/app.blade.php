@@ -27,7 +27,7 @@
 
 <style>
     #finance-manager {
-        background-image: url('/image/manager.webp');
+        background-image: url('/image/finance-img.jpg');
         background-position: center;
         background-size: cover;
     }
