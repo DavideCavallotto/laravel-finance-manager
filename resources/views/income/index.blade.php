@@ -29,7 +29,7 @@
                             <form action="{{ route('incomes.destroy', $income) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-link text-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                <button id="deleteButton" type="submit" class="btn btn-link text-danger"><i class="fa-solid fa-trash-can"></i></button>
                             </form>
                         </td>
 
